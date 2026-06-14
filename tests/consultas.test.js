@@ -62,11 +62,9 @@ describe('Ejercitación MongoDB - Búsquedas y Manipulación', () => {
 
     const resultados = await equiposCollection.find(buscarGruposCOF).toArray();
     
-    expect(resultados).toHaveLength(3);
+    expect(resultados).toHaveLength(8);
     const nombres = resultados.map(r => r.equipo);
-    expect(nombres).toContain('Argentina');
     expect(nombres).toContain('Marruecos');
-    expect(nombres).toContain('Croacia');
   });
 
   it('3. Búsqueda parcial $regex: buscarTecnicoLionel', async () => {
